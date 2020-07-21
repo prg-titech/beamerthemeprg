@@ -16,6 +16,14 @@ Beamer theme for Programming Research Group.
 
     \begin{document}
     \frame{\maketitle}
+
+    \begin{frame}[fragile]
+      \begin{itemize}
+      \item Item 1
+      \item Item 2
+      \end{itemize}
+    \end{frame}
+
     \end{document}
     ```
 1. Typeset your LaTeX file.
