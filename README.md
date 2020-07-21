@@ -4,7 +4,7 @@ Beamer theme for Programming Research Group.
 
 ## Usage
 
-1. Copy `beamerthemeprg.sty` and `titech_logo.jpg` to your project.
+1. Download the latest release from https://github.com/prg-titech/beamerthemeprg/releases.
 1. Write your LaTeX file as following:
     ```tex
     \documentclass{beamer}
