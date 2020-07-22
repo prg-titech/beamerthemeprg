@@ -2,28 +2,14 @@
 
 Beamer theme for Programming Research Group.
 
-## Usage
+Download the latest release from https://github.com/prg-titech/beamerthemeprg/releases and put them on your project.
 
-1. Download the latest release from https://github.com/prg-titech/beamerthemeprg/releases.
-1. Write your LaTeX file as following:
-    ```tex
-    \documentclass{beamer}
-    \usetheme{prg}
+## For developers
 
-    \title{Example}
-    \author{John Doe}
-    \date{\today}
+This project uses semantic versioning for managing releases.
+If you are going to release the latest version, do the following instructions.
 
-    \begin{document}
-    \frame{\maketitle}
-
-    \begin{frame}[fragile]
-      \begin{itemize}
-      \item Item 1
-      \item Item 2
-      \end{itemize}
-    \end{frame}
-
-    \end{document}
-    ```
-1. Typeset your LaTeX file.
+```shell
+$ git tag v1.2.3 # Please add the prefix `v' to the version number.
+$ git push --tags
+```
