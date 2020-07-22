@@ -10,7 +10,9 @@ $(EXAMPLE).pdf: $(EXAMPLE).tex
 	$(LATEX) $(LATEX_FLAGS) $<
 
 build: $(STYLES) $(MISC)
-	zip $(APP) $^
+	zip --junk-paths $(APP) $^
 
 clean:
 	$(RM) *.log *.aux *.nav *.out *.snm *.toc
+
+.PHONY: build clean
