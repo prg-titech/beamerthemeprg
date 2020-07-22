@@ -1,5 +1,7 @@
 APP = beamerthemeprg
 EXAMPLE = example-prg
+STYLES = $(shell find . -maxdepth 1 -name "*.sty" -type f)
+MISC = titech.pdf titech.pdf_tex
 
 LATEX = pdflatex
 LATEX_FLAGS = -shell-escape -halt-on-error
@@ -7,7 +9,7 @@ LATEX_FLAGS = -shell-escape -halt-on-error
 $(EXAMPLE).pdf: $(EXAMPLE).tex
 	$(LATEX) $(LATEX_FLAGS) $<
 
-build: $(APP).sty titech.pdf titech.pdf_tex
+build: $(STYLES) $(MISC)
 	zip $(APP) $^
 
 clean:
