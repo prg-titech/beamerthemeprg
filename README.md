@@ -1,6 +1,6 @@
 # beamerthemeprg.sty
 
-Beamer theme for Programming Research Group.
+A beamer theme for Programming Research Group.
 
 Download the latest release from https://github.com/prg-titech/beamerthemeprg/releases and put them on your project.
 
