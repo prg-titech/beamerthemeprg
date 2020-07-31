@@ -21,6 +21,8 @@
 
 \mode<presentation>
 
+\usefonttheme[onlylarge]{structurebold}
+
 \setbeamerfont{normal text}{} % ignored currently
 \setbeamerfont{alerted text}{}
 \setbeamerfont{example text}{}
@@ -83,7 +85,7 @@
 \setbeamerfont{block body}{}
 \setbeamerfont{block body alerted}{}
 \setbeamerfont{block body example}{}
-\setbeamerfont{block title}{size=\large,parent={structure,block body}}
+\setbeamerfont{block title}{parent={structure,block body}}
 \setbeamerfont{block title alerted}{parent={block title,alerted text}}
 \setbeamerfont{block title example}{parent={block title,example text}}
 
@@ -105,8 +107,7 @@
 
 \setbeamerfont{itemize/enumerate body}{}
 \setbeamerfont{itemize/enumerate subbody}{size=\small}
-\setbeamerfont{itemize/enumerate subsubbody}{size=\footnotesize}
-
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
 
 \setbeamerfont{description item}{parent=item}
 
