@@ -2,7 +2,7 @@
 
 A beamer theme for Programming Research Group.
 
-Download the latest release from https://github.com/prg-titech/beamerthemeprg/releases and put them on your project.
+Download the latest release from https://github.com/prg-titech/beamerthemeprg/releases and put them on your project root.
 
 ## For developers
 
