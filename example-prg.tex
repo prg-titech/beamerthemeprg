@@ -1,5 +1,7 @@
-\documentclass[12pt]{beamer}
-\usetheme{prg}
+\documentclass[12pt,aspectratio=169]{beamer}
+
+\usetheme[bigpagenumber]{prg}
+
 
 \usepackage{amsmath}
 
@@ -14,8 +16,10 @@
 
 \frame{\maketitle}
 
-\begin{frame}[fragile]
-  \frametitle{Example: frame title}
+\section{frame title}
+
+\begin{frame}[fragile,t]
+  \frametitle{Example: frame title (top)}
   \framesubtitle{Example: frame subtitle}
 
   Normal text.
@@ -32,6 +36,33 @@
 
 \end{frame}
 
+\begin{frame}[fragile,t]
+  \frametitle{Example: frame title}
+  %\framesubtitle{Example: frame subtitle}
+
+  Normal text.
+
+  \begin{itemize}
+  \item Item 1
+  \item Item 2
+  \end{itemize}
+
+  \begin{enumerate}
+  \item Enum 1
+  \item Enum 2
+  \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Long Title Long Title Long Title Long Title Long Title Long Title Long Title Long Title}
+
+\end{frame}
+
+
+
+\section{definition}
+
 \begin{frame}[fragile]
   \frametitle{Example: definition}
 
@@ -42,6 +73,8 @@
   \end{definition}
 
 \end{frame}
+
+\section{lemma and theorem}
 
 \begin{frame}
   \frametitle{Example: lemma and theorem}
