@@ -26,10 +26,7 @@
   \vbox{}
   \vfill
   \begin{centering}
-    % \begin{beamercolorbox}[right]{logo}
-    %   \insertlogo%
-    % \end{beamercolorbox}%
-    \vskip3em\par
+    \vskip-3em\par
     \begin{beamercolorbox}[sep=8pt,center,#1]{title}
       \usebeamerfont{title}\inserttitle\par%
       \ifx\insertsubtitle\@empty%
@@ -44,7 +41,11 @@
     \end{beamercolorbox}
     \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
       \usebeamerfont{institute}\insertinstitute
-    \end{beamercolorbox}
+    \end{beamercolorbox}\vskip0.5em
+    \begin{beamercolorbox}[right]{logo}
+      \centering
+      \insertlogo
+    \end{beamercolorbox}\vskip0.5em%
     \begin{beamercolorbox}[sep=8pt,center,#1]{date}
       \usebeamerfont{date}\insertdate
     \end{beamercolorbox}\vskip0.5em
@@ -66,7 +67,22 @@
   \end{centering}
 }
 
-% Itemize items, prg
+\defbeamertemplate*{frametitle}{prg}[1][]
+{
+
+  \nointerlineskip
+  \begin{beamercolorbox}[sep=1ex,wd=\paperwidth]{framelike}
+    \vbox{}\vskip-1.2ex%
+    \strut\insertframetitle\strut
+    \vskip-0.75ex%
+    \ifx\insertframesubtitle\@empty
+    \else
+    {\usebeamerfont{framesubtitle}\insertframesubtitle}
+    \vskip-0.5ex%
+    \fi
+  \end{beamercolorbox}
+  \vskip-0.5ex%
+}
 
 \defbeamertemplate*{itemize item}{prg}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
 \defbeamertemplate*{itemize subitem}{prg}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$-$}}
@@ -97,16 +113,16 @@
 \defbeamertemplate*{block begin}{prg}
 {
   \par\vskip\medskipamount%
-  \begin{beamercolorbox}[colsep*=.75ex]{block title}
-    \usebeamerfont*{block title}\insertblocktitle%
+  \begin{beamercolorbox}[colsep*=.25ex]{block title}
+    {\usebeamerfont*{block title}\insertblocktitle}%
   \end{beamercolorbox}%
   {\parskip0pt\par}%
   \ifbeamercolorempty[bg]{block title}
   {}
   {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
   \usebeamerfont{block body}%
-  \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body}%
-    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  \begin{beamercolorbox}[colsep*=.25ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.25ex}\vbox{}%
 }
 \defbeamertemplate*{block end}{prg}
 {\end{beamercolorbox}\vskip\smallskipamount}
@@ -114,16 +130,16 @@
 \defbeamertemplate*{block alerted begin}{prg}
 {
   \par\vskip\medskipamount%
-  \begin{beamercolorbox}[colsep*=.75ex]{block title alerted}
-    \usebeamerfont*{block title alerted}\insertblocktitle%
+  \begin{beamercolorbox}[colsep*=.25ex]{block title alerted}
+    {\usebeamerfont*{block title alerted}\insertblocktitle}%
   \end{beamercolorbox}%
   {\parskip0pt\par}%
   \ifbeamercolorempty[bg]{block title alerted}
   {}
   {\ifbeamercolorempty[bg]{block body alerted}{}{\nointerlineskip\vskip-0.5pt}}%
   \usebeamerfont{block body alerted}%
-  \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body alerted}%
-    \ifbeamercolorempty[bg]{block body alerted}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  \begin{beamercolorbox}[colsep*=.25ex,vmode]{block body alerted}%
+    \ifbeamercolorempty[bg]{block body alerted}{\vskip-.25ex}{\vskip-.25ex}\vbox{}%
 }
 
 \defbeamertemplate*{block alerted end}{prg}
@@ -133,16 +149,16 @@
 \defbeamertemplate*{block example begin}{prg}
 {
   \par\vskip\medskipamount%
-  \begin{beamercolorbox}[colsep*=.75ex]{block title example}
-    \usebeamerfont*{block title example}\insertblocktitle%
+  \begin{beamercolorbox}[colsep*=.25ex]{block title example}
+    {\usebeamerfont*{block title example}\insertblocktitle}%
   \end{beamercolorbox}%
   {\parskip0pt\par}%
   \ifbeamercolorempty[bg]{block title example}
   {}
   {\ifbeamercolorempty[bg]{block body example}{}{\nointerlineskip\vskip-0.5pt}}%
   \usebeamerfont{block body example}%
-  \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body example}%
-    \ifbeamercolorempty[bg]{block body example}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  \begin{beamercolorbox}[colsep*=.25ex,vmode]{block body example}%
+    \ifbeamercolorempty[bg]{block body example}{\vskip-.25ex}{\vskip-.25ex}\vbox{}%
 }
 \defbeamertemplate*{block example end}{prg}
 {\end{beamercolorbox}\vskip\smallskipamount}

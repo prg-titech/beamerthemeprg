@@ -21,6 +21,16 @@
 
 \mode<presentation>
 
+\newif\ifbeamer@prg@bigpagenumber
+\beamer@prg@bigpagenumberfalse
+\DeclareOptionBeamer{bigpagenumber}{\beamer@prg@bigpagenumbertrue}
+
+\newif\ifbeamer@prg@topline
+\beamer@prg@toplinefalse
+\DeclareOptionBeamer{topline}{\beamer@prg@toplinetrue}
+
+\ProcessOptionsBeamer
+
 \setbeamercolor*{author in head/foot}{parent=palette tertiary}
 \setbeamercolor*{title in head/foot}{parent=palette secondary}
 \setbeamercolor*{date in head/foot}{parent=palette primary}
@@ -28,47 +38,74 @@
 \setbeamercolor*{section in head/foot}{parent=palette tertiary}
 \setbeamercolor*{subsection in head/foot}{parent=palette primary}
 
+\RequirePackage{tikz}
+
 \defbeamertemplate*{footline}{prg theme}
 {
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=2.5ex,left,leftskip=4ex]{author in head/foot}%
-    \usebeamerfont{author in head/foot}Programming Research Group (prg.is.titech.ac.jp) 2013--present
+  \ifbeamer@prg@bigpagenumber
+  \hbox{
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,left,leftskip=1ex]{author
+      in head/foot}%
+    \leavevmode%
+    \ifbeamer@prg@topline
+    \else
+    \usebeamerfont{title in head/foot}\insertshorttitle{}\hspace*{2em}
+    \fi
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=2.5ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{4ex}
+  \begin{beamercolorbox}[wd=.215\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \leavevmode%
+    \insertshortdate{}\hspace*{2em}
   \end{beamercolorbox}}%
-  \vskip0pt%
+  \begin{tikzpicture}[overlay]
+    \draw[fill=beamer@royalblue] (\paperwidth-5ex,3.625ex) circle (6ex);
+    \draw[fill=white] (\paperwidth-5ex,3.625ex) circle (5ex);
+    \node at (\paperwidth-5ex,4ex) {\small$^\text{\insertframenumber}/_\text{\inserttotalframenumber}$};
+  \end{tikzpicture}%
+  \else
+  \leavevmode%
+   \hbox{%
+   \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,left,leftskip=1.75ex]{author
+       in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle{}\hspace*{2em}
+   \end{beamercolorbox}%
+   \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+     \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+   \end{beamercolorbox}}%
+   \vskip0pt%
+  \fi
+
 }
 
 \defbeamertemplate*{headline}{prg theme}
 {
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[ht=4ex,dp=0ex,left,leftskip=4ex]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle
-    \ifx\insertsectionhead\@empty%
-    \else%
-    {\usebeamerfont{section in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
-    \fi%
-    \usebeamerfont{section in head/foot}\insertsectionhead
-    \ifx\insertsubsectionhead\@empty%
-    \else%
-    {\usebeamerfont{subsection in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
-    \fi%
-    \usebeamerfont{subsection in head/foot}\insertsubsectionhead
-  \end{beamercolorbox}}%
-  \vskip0pt%
+  % \ifbeamer@prg@topline
+  % \leavevmode%
+  %   \hbox{%
+  %   \begin{beamercolorbox}[ht=2.25ex,dp=1ex,left,leftskip=1ex]{framelike}%
+  %     \usebeamerfont{title in head/foot}\insertshorttitle
+  %     \ifx\insertsectionhead\@empty%
+  %     \else%
+  %     {\usebeamerfont{section in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
+  %     \fi%
+  %     \usebeamerfont{section in head/foot}\insertsectionhead
+  %     \ifx\insertsubsectionhead\@empty%
+  %     \else%
+  %     {\usebeamerfont{subsection in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
+  %     \fi%
+  %     \usebeamerfont{subsection in head/foot}\insertsubsectionhead
+  %   \end{beamercolorbox}}%
+  %   \vskip-1pt%
+  % \fi
 }
 
 \defbeamertemplate*{sidebar right}{prg theme}
 {
-  \vspace{-3ex}
-  \llap{\insertlogo\hskip4ex}%
+  % \vspace{-3ex}
+  % \llap{\insertlogo\hskip0.1cm}%
 }
 
-\setbeamersize{text margin left=2em,text margin right=2em}
+\setbeamersize{text margin left=1em,text margin right=1em}
 
 \mode
 <all>
