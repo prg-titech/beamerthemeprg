@@ -69,16 +69,15 @@
 
 \defbeamertemplate*{frametitle}{prg}[1][]
 {
-
   \nointerlineskip
   \begin{beamercolorbox}[sep=1ex,wd=\paperwidth]{framelike}
-    \vbox{}\vskip-1.2ex%
+    \vbox{}\vskip-1.5ex%
     \strut\insertframetitle\strut
     \vskip-0.75ex%
     \ifx\insertframesubtitle\@empty
     \else
-    {\usebeamerfont{framesubtitle}\insertframesubtitle}
-    \vskip-0.5ex%
+    \strut{\usebeamerfont{framesubtitle}\insertframesubtitle}\strut
+    \vskip-1ex%
     \fi
   \end{beamercolorbox}
   \vskip-0.5ex%

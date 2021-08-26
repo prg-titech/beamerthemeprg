@@ -79,24 +79,24 @@
 
 \defbeamertemplate*{headline}{prg theme}
 {
-  % \ifbeamer@prg@topline
-  % \leavevmode%
-  %   \hbox{%
-  %   \begin{beamercolorbox}[ht=2.25ex,dp=1ex,left,leftskip=1ex]{framelike}%
-  %     \usebeamerfont{title in head/foot}\insertshorttitle
-  %     \ifx\insertsectionhead\@empty%
-  %     \else%
-  %     {\usebeamerfont{section in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
-  %     \fi%
-  %     \usebeamerfont{section in head/foot}\insertsectionhead
-  %     \ifx\insertsubsectionhead\@empty%
-  %     \else%
-  %     {\usebeamerfont{subsection in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
-  %     \fi%
-  %     \usebeamerfont{subsection in head/foot}\insertsubsectionhead
-  %   \end{beamercolorbox}}%
-  %   \vskip-1pt%
-  % \fi
+  \ifbeamer@prg@topline
+  \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[ht=2.25ex,dp=1ex,left,leftskip=1ex]{framelike}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+      \ifx\insertsectionhead\@empty%
+      \else%
+      {\usebeamerfont{section in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
+      \fi%
+      \usebeamerfont{section in head/foot}\insertsectionhead
+      \ifx\insertsubsectionhead\@empty%
+      \else%
+      {\usebeamerfont{subsection in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
+      \fi%
+      \usebeamerfont{subsection in head/foot}\insertsubsectionhead
+    \end{beamercolorbox}}%
+    \vskip-1pt%
+  \fi
 }
 
 \defbeamertemplate*{sidebar right}{prg theme}

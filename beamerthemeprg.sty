@@ -19,7 +19,7 @@
 
 \ProvidesPackage{beamerthemeprg}
 
-% \DeclareOptionBeamer{topline}{\PassOptionsToPackage{topline}{beamerouterthemeprg}}
+\DeclareOptionBeamer{topline}{\PassOptionsToPackage{topline}{beamerouterthemeprg}}
 \DeclareOptionBeamer{bigpagenumber}{\PassOptionsToPackage{bigpagenumber}{beamerouterthemeprg}}
 
 \ProcessOptionsBeamer
@@ -27,7 +27,8 @@
 \mode<presentation>
 
 % Some images
-\logo{\scalebox{.15}{\input{titech.pdf_tex}}}
+% \logo{\scalebox{.15}{\input{titech.pdf_tex}}}
+\logo{\scalebox{.20}{\includegraphics{titech_logo.png}}}
 
 \usecolortheme{prg}
 \useinnertheme{prg}
