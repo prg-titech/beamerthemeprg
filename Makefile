@@ -1,7 +1,7 @@
 APP = beamerthemeprg
 EXAMPLE = example-prg
 STYLES = $(shell find . -maxdepth 1 -name "*.sty" -type f)
-MISC = titech.pdf titech.pdf_tex
+MISC = titech_logo.png
 
 LATEX = pdflatex
 LATEX_FLAGS = -shell-escape -halt-on-error
